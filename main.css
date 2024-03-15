@@ -1,0 +1,30 @@
+body {
+    background-color: floralwhite;
+    font-family: Arial;
+    margin: 0px;
+}
+
+main {
+    background-color: antiquewhite;
+    color: darkslategrey;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 5px;
+    padding: 1px;
+}
+
+footer {
+    background-color: rgb(91, 116, 116);
+    color: whitesmoke;
+    padding-bottom: 4px;
+}
+
+header {
+    background-color: rgb(91, 116, 116);
+    color: whitesmoke;
+    padding-top: 4px;
+}
+
+a:link, a:visited {
+    text-decoration:none;
+    color: rgb(62, 91, 91);
+ }
