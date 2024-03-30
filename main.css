@@ -8,7 +8,7 @@ main {
     background-color: antiquewhite;
     color: darkslategrey;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 5px;
+    margin: 10 px 20 px 45px;
     padding: 1px;
 }
 
@@ -16,6 +16,10 @@ footer {
     background-color: rgb(91, 116, 116);
     color: whitesmoke;
     padding-bottom: 4px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 header {
