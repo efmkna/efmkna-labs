@@ -24,7 +24,26 @@ header {
     padding-top: 4px;
 }
 
-a:link, a:visited {
+a {
     text-decoration:none;
     color: rgb(62, 91, 91);
  }
+
+a:hover {
+    color: rgb(11, 148, 148);
+    text-decoration: underline;
+    background-color: rgba(173, 216, 230, 0.473);
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
+}
+
+a:link {
+    color: rgb(75, 110, 110);
+}
+
+a:visited {
+    color: rgb(52, 77, 77);
+}
