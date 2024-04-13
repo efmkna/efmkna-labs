@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефимкина Софья Алексеевна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
+    <style>
+        div {
+            position: relative;
+            background-color: aliceblue;
+            color: aliceblue;
+            text-align: center;
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 15px rgb(0, 89, 255);
+            display: none;
+        }
+
+        .d1 {
+            top: -175px;
+            left: 175px;
+            width: 20px;
+            height: 10px;
+        }
+
+        .d2 {
+            top: -210px;
+            left: 145px;
+            width: 30px;
+            height: 20px;
+        }
+
+        .d3 {
+            top: -270px;
+            left: 115px;
+            width: 40px;
+            height: 30px;
+        }
+
+        .d4 {
+            top: -350px;
+            left: 50px;
+            width: 80px;
+            height: 50px;
+            color: black;
+            font-size: 10px;
+            line-height: 50px;
+        }
+
+        img:hover ~ div {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="wow.jpg" width="100%">
+    <div class="d1">d</div>
+    <div class="d2">d</div>
+    <div class="d3">d</div>
+    <div class="d4">Привет Мир!</div>
+</body>
+</html>
