@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефимкина Софья Алексеевна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
+    <style>
+        div {
+            width: 300px;
+            line-height: 70px;
+            height: 70px;
+            text-align: center;
+            background-color: rgb(177, 210, 200);
+            border: 1px dotted rgb(0, 143, 55);
+            margin: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .position-relative {
+            position: relative;
+            top: -130px;
+            left: 150px;
+            z-index: 1;
+        }
+
+        .position-relative:hover {
+            position: relative;
+            z-index: 2;
+        }
+
+        .position-absolute {
+            position: absolute;
+            left: 300px;
+        }
+
+        .position-absolute:hover {
+            width: 350px;
+            background-color: tomato;
+            box-shadow: 0 0 20px cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 4
+    </header>
+
+    <main>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+
+    <footer>
+        &copy; Софья Ефимкина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
