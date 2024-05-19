@@ -15,7 +15,14 @@
             let result = a + b;
             alert('сумма ' + a + ' и ' + b + ' равна ' + result);
         }
-
+        function showAuthor() {
+            let author = 'Автор страницы:\nЕфимкина Софья Алексеевна';
+            alert(author);
+        }
+        function showMessage() {
+            let hello = 'Привет Мир!';
+            alert(hello);
+        }
     </script>
     <style>
         .message {
@@ -32,16 +39,16 @@
     </style>
 </head>
 <body>
-    <header>
+    <header onclick="showAuthor()">
         НГТУ, ФБ, Лабораторная 4
     </header>
 
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
-    <footer>
+    <footer ondblclick="showMessage()">
         &copy; Софья Ефимкина, ФБИ-24, 2 курс, 2024
     </footer>
 </body>
