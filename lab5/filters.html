@@ -24,6 +24,11 @@
             document.getElementById('contrOutput').innerText = value;
             document.getElementById('blurImage').style.filter = 'contrast(' + value + ')';
         }
+        function grayChange() {
+            let value = document.getElementById('grayValue').value + '%';
+            document.getElementById('grayOutput').innerText = value;
+            document.getElementById('blurImage').style.filter = 'grayscale(' + value + ')';
+        }
     </script>
 </head>
 <body>
@@ -47,6 +52,12 @@
             <input type="range" min="0%" max="500%" value="100%" onchange="contrChange()" id="contrValue">
             <span id="contrOutput"></span>
         </div>
+        <div>
+            Фильр grayscale:
+            <input type="range" min="0%" max="100%" value="0%" onchange="grayChange()" id="grayValue">
+            <span id="grayOutput"></span>
+        </div>
+        <div><img src="wonderful-sea.jpg" id="blurImage"></div>
     </main>
 
     <footer>
