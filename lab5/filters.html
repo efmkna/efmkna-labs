@@ -34,6 +34,11 @@
             document.getElementById('huerrOutput').innerText = value;
             document.getElementById('blurImage').style.filter = 'hue-rotate(' + value + ')';
         }
+        function invertChange() {
+            let value = document.getElementById('invertValue').value + '%';
+            document.getElementById('invertOutput').innerText = value;
+            document.getElementById('blurImage').style.filter = 'invert(' + value + ')';
+        }
     </script>
 </head>
 <body>
@@ -66,6 +71,11 @@
             Фильр hue-rotate:
             <input type="range" min="0deg" max="360deg" value="0deg" onchange="huerrChange()" id="huerrValue">
             <span id="huerrOutput"></span>
+        </div>
+        <div>
+            Фильр invert:
+            <input type="range" min="0%" max="100%" value="0%" onchange="invertChange()" id="invertValue">
+            <span id="invertOutput"></span>
         </div>
         <div><img src="wonderful-sea.jpg" id="blurImage"></div>
     </main>
