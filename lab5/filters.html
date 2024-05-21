@@ -29,6 +29,11 @@
             document.getElementById('grayOutput').innerText = value;
             document.getElementById('blurImage').style.filter = 'grayscale(' + value + ')';
         }
+        function huerrChange() {
+            let value = document.getElementById('huerrValue').value + 'deg';
+            document.getElementById('huerrOutput').innerText = value;
+            document.getElementById('blurImage').style.filter = 'hue-rotate(' + value + ')';
+        }
     </script>
 </head>
 <body>
@@ -56,6 +61,11 @@
             Фильр grayscale:
             <input type="range" min="0%" max="100%" value="0%" onchange="grayChange()" id="grayValue">
             <span id="grayOutput"></span>
+        </div>
+        <div>
+            Фильр hue-rotate:
+            <input type="range" min="0deg" max="360deg" value="0deg" onchange="huerrChange()" id="huerrValue">
+            <span id="huerrOutput"></span>
         </div>
         <div><img src="wonderful-sea.jpg" id="blurImage"></div>
     </main>
