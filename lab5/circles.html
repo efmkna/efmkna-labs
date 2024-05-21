@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефимкина Софья Алексеевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="lab4/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="lab4/favicon-32x32.png">
+    <link rel="icon" href="lab4/favicon-16x16.png">
+    <script>
+        function hideCircle() {
+            let circles = document.querySelectorAll('.circle');
+                for (let i = 0; i < circles.length; i++) {
+                circles[i].addEventListener('click', function() {
+                    this.style.transition = "all 0.5s";
+                    this.style.opacity = "0";
+                    this.style.width = "0";
+                    this.style.height = "0";
+                    setTimeout(() => {
+                    this.style.display = "none";
+                    }, 500);
+                });
+            }
+        } 
+    </script>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border-radius: 50px;
+            font-size: 25px;
+            border: 1px dotted black;
+            line-height: 50px;
+        }
+
+        .dd1 {
+            position: absolute;
+            background-color: red;
+            color: yellow;
+            top: 230px;
+            left: 300px;
+        }
+
+        .dd2 {
+            position: absolute;
+            background-color: purple;
+            color: plum;
+            top: 130px;
+            left: 230px;
+        }
+
+        .dd3 {
+            position: absolute;
+            background-color: aqua;
+            color: brown;
+            top: 30px;
+            left: 230px;
+        }
+
+        .dd4 {
+            position: absolute;
+            background-color: blue;
+            color: burlywood;
+            top: 30px;
+            left: 140px;
+        }
+
+        .dd5 {
+            position: absolute;
+            background-color: chocolate;
+            color: chartreuse;
+            top: 330px;
+            left: 40px;
+        }
+
+        .dd6 {
+            position: absolute;
+            background-color: cornflowerblue;
+            color: black;
+            top: 270px;
+            left: 40px;
+        }
+
+        .dd7 {
+            position: absolute;
+            background-color: violet;
+            color: whitesmoke;
+            top: 200px;
+            left: 10px;
+        }
+
+        .dd8 {
+            position: absolute;
+            background-color: whitesmoke;
+            color: violet;
+            top: 210px;
+            left: 150px;
+        }
+
+        .dd9 {
+            position: absolute;
+            background-color: whitesmoke;
+            color: violet;
+            top: 210px;
+            left: 150px;
+        }
+
+        .dd10 {
+            position: absolute;
+            background-color: black;
+            color: wheat;
+            top: 60px;
+            left: 50px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 4
+    </header>
+
+    <main>
+        <div class="dd1" id="circle1">1</div>
+        <div class="dd2" id="circle2">2</div>
+        <div class="dd3" id="circle3">3</div>
+        <div class="dd4" id="circle4">4</div>
+        <div class="dd5" id="circle5">5</div>
+        <div class="dd6" id="circle6">6</div>
+        <div class="dd7" id="circle7">7</div>
+        <div class="dd8" id="circle8">8</div>
+        <div class="dd9" id="circle9">9</div>
+        <div class="dd10" id="circle10">10</div>
+    </main>
+
+    <footer>
+        &copy; Софья Ефимкина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
