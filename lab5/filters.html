@@ -19,6 +19,11 @@
             document.getElementById('brightOutput').innerText = value;
             document.getElementById('blurImage').style.filter = 'brightness(' + value + ')';
         }
+        function contrChange() {
+            let value = document.getElementById('contrValue').value + '%';
+            document.getElementById('contrOutput').innerText = value;
+            document.getElementById('blurImage').style.filter = 'contrast(' + value + ')';
+        }
     </script>
 </head>
 <body>
@@ -37,7 +42,11 @@
             <input type="range" min="0%" max="500%" value="100%" onchange="brightChange()" id="brightValue">
             <span id="brightOutput"></span>
         </div>
-
+        <div>
+        Фильр contrast:
+            <input type="range" min="0%" max="500%" value="100%" onchange="contrChange()" id="contrValue">
+            <span id="contrOutput"></span>
+        </div>
     </main>
 
     <footer>
