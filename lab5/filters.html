@@ -17,27 +17,37 @@
         function brightChange() {
             let value = document.getElementById('brightValue').value + '%';
             document.getElementById('brightOutput').innerText = value;
-            document.getElementById('blurImage').style.filter = 'brightness(' + value + ')';
+            document.getElementById('brightImage').style.filter = 'brightness(' + value + ')';
         }
         function contrChange() {
             let value = document.getElementById('contrValue').value + '%';
             document.getElementById('contrOutput').innerText = value;
-            document.getElementById('blurImage').style.filter = 'contrast(' + value + ')';
+            document.getElementById('contrImage').style.filter = 'contrast(' + value + ')';
         }
         function grayChange() {
             let value = document.getElementById('grayValue').value + '%';
             document.getElementById('grayOutput').innerText = value;
-            document.getElementById('blurImage').style.filter = 'grayscale(' + value + ')';
+            document.getElementById('grayImage').style.filter = 'grayscale(' + value + ')';
         }
         function huerrChange() {
             let value = document.getElementById('huerrValue').value + 'deg';
             document.getElementById('huerrOutput').innerText = value;
-            document.getElementById('blurImage').style.filter = 'hue-rotate(' + value + ')';
+            document.getElementById('huerrImage').style.filter = 'hue-rotate(' + value + ')';
         }
         function invertChange() {
             let value = document.getElementById('invertValue').value + '%';
             document.getElementById('invertOutput').innerText = value;
-            document.getElementById('blurImage').style.filter = 'invert(' + value + ')';
+            document.getElementById('invertImage').style.filter = 'invert(' + value + ')';
+        }
+        function saturChange() {
+            let value = document.getElementById('saturValue').value + '%';
+            document.getElementById('saturOutput').innerText = value;
+            document.getElementById('saturImage').style.filter = 'saturate(' + value + ')';
+        }
+        function sepiaChange() {
+            let value = document.getElementById('sepiaValue').value + '%';
+            document.getElementById('sepiaOutput').innerText = value;
+            document.getElementById('sepiaImage').style.filter = 'sepia(' + value + ')';
         }
     </script>
 </head>
@@ -52,32 +62,56 @@
             <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blurValue">
             <span id="blurOutput"></span>
         </div>
+        <div><img src="wonderful-sea.jpg" id="blurImage"></div>
+
         <div>
             Фильр brightness:
             <input type="range" min="0%" max="500%" value="100%" onchange="brightChange()" id="brightValue">
             <span id="brightOutput"></span>
         </div>
+        <div><img src="wonderful-sea.jpg" id="brightImage"></div>
+
         <div>
-        Фильр contrast:
+            Фильр contrast:
             <input type="range" min="0%" max="500%" value="100%" onchange="contrChange()" id="contrValue">
             <span id="contrOutput"></span>
         </div>
+        <div><img src="wonderful-sea.jpg" id="contrImage"></div>
+
         <div>
             Фильр grayscale:
             <input type="range" min="0%" max="100%" value="0%" onchange="grayChange()" id="grayValue">
             <span id="grayOutput"></span>
         </div>
+        <div><img src="wonderful-sea.jpg" id="grayImage"></div>
+
         <div>
             Фильр hue-rotate:
             <input type="range" min="0deg" max="360deg" value="0deg" onchange="huerrChange()" id="huerrValue">
             <span id="huerrOutput"></span>
         </div>
+        <div><img src="wonderful-sea.jpg" id="huerrImage"></div>
+
         <div>
             Фильр invert:
             <input type="range" min="0%" max="100%" value="0%" onchange="invertChange()" id="invertValue">
             <span id="invertOutput"></span>
         </div>
-        <div><img src="wonderful-sea.jpg" id="blurImage"></div>
+        <div><img src="wonderful-sea.jpg" id="invertImage"></div>
+
+        <div>
+            Фильр saturate:
+            <input type="range" min="0%" max="100%" value="0%" onchange="saturChange()" id="saturValue">
+            <span id="saturOutput"></span>
+        </div>
+        <div><img src="wonderful-sea.jpg" id="saturImage"></div>
+
+        <div>
+            Фильр sepia:
+            <input type="range" min="0%" max="100%" value="0%" onchange="sepiaChange()" id="sepiaValue">
+            <span id="sepiaOutput"></span>
+        </div>
+        <div><img src="wonderful-sea.jpg" id="sepiaImage"></div>
     </main>
 
     <footer>
