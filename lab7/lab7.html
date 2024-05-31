@@ -85,14 +85,64 @@
                 counterText.style.fontWeight = 'bold';
                 counterText.textContent = counter;
 
-                newCircle.appendChild(counterText);
+                newCircle.appendChild(innerText);
 
                 main.appendChild(newCircle);
 
                 counter -= 3;
             }
+        }
+        function opacityBlocks() {
+            let main = document.querySelector('main');
+
+            let opacity = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '100px';
+                newBlock.style.height = '50px';
+                newBlock.style.backgroundColor = 'gray';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.lineHeight = '50px';
+                newBlock.style.margin = '10px';
+                newBlock.style.opacity = opacity;
+
+                newBlock.innerText = `Блок № ${i}`;
+
+                opacity += 0.1;
+
+                main.appendChild(newBlock);
+            }
+        }
+
+        function circles() {
+            let inputCount = document.getElementById('circleCount').value;
+            let main = document.querySelector('main');
+
+            if (!inputCount || isNaN(inputCount) || inputCount <= 0) {
+                alert('Введите корректное число кругов (больше 0)');
+                return;
             }
 
+            for (let i = inputCount; i >= 1; i--) {
+                let newCircle = document.createElement('div');
+                newCircle.style.width = '40px'; 
+                newCircle.style.height = '40px'; 
+                newCircle.style.borderRadius = '50%'; 
+                newCircle.style.display = 'inline-block'; 
+                newCircle.style.margin = '10px'; 
+
+                newCircle.style.backgroundColor = i % 2 === 0 ? 'yellow' : 'pink';
+
+                let circleNumber = document.createElement('span');
+                circleNumber.style.fontSize = '12px';
+                circleNumber.style.fontWeight = 'bold';
+                circleNumber.textContent = i;
+                newCircle.appendChild(circleNumber);
+
+                main.appendChild(newCircle);
+            }
+        }
     </script>
 </head>
 <body>
@@ -105,6 +155,9 @@
         <button onclick="addNewBlocks()">добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add10_80()">10 => -80</button>
+        <button onclick="opacityBlocks()">полупрозрачные блоки</button>
+        <input type="number" id="circleCount" min="1">
+        <button onclick="circles()">цветные круги</button>
     </main>
 
     <footer>
