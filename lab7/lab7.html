@@ -24,6 +24,20 @@
 
             document.querySelector('main').appendChild(newBlock);
         }
+        function addNewBlocks() {
+            let maxBlockCount = 10;
+            let randomBlockCount = Math.floor(Math.random() * maxBlockCount) + 1;
+            let main = document.querySelector('main');
+            for (let i = 0; i < randomBlockCount; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'green';
+                newBlock.style.height = '40px';
+                newBlock.style.width = `${(i + 1) * 40}px`;
+                newBlock.innerHTML = `блок № + ${i+1}: 2*${i}<sup>2</sup> = ${2 * i**2}`;
+
+                main.appendChild(newBlock);
+            }
+        }
     </script>
 </head>
 <body>
@@ -32,7 +46,8 @@
     </header>
 
     <main>
-        <button onclick="addNewBlock()">добавить блок</button>
+        <button onclick="addNewBlock()" >добавить блок</button>
+        <button onclick="addNewBlocks()">добавить блоки</button>
     </main>
 
     <footer>
