@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефимкина Софья Алексеевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <script>
+        function calculateTotal() {
+            let balance = parseFloat(document.getElementById('balance').value);
+            let total = 0;
+
+            let item1Quantity = parseInt(document.getElementById('item1-quantity').value);
+            let item1Price = 500;
+            let item1Total = item1Quantity * item1Price;
+
+            let item2Quantity = parseInt(document.getElementById('item2-quantity').value);
+            let item2Price = 700;
+            let item2Total = item2Quantity * item2Price;
+
+            let item3Quantity = parseInt(document.getElementById('item3-quantity').value);
+            let item3Price = 300;
+            let item3Total = item3Quantity * item3Price;
+
+            let item4Quantity = parseInt(document.getElementById('item4-quantity').value);
+            let item4Price = 250;
+            let item4Total = item4Quantity * item4Price;
+
+            let item5Quantity = parseInt(document.getElementById('item5-quantity').value);
+            let item5Price = 360;
+            let item5Total = item5Quantity * item5Price;
+
+            let item6Quantity = parseInt(document.getElementById('item6-quantity').value);
+            let item6Price = 460;
+            let item6Total = item6Quantity * item6Price;
+
+            let item7Quantity = parseInt(document.getElementById('item1-quantity').value);
+            let item7Price = 500;
+            let item7Total = item7Quantity * item7Price;
+
+            total = item1Total + item2Total + item3Total + item4Total + item5Total + item6Total + item7Total; 
+            document.getElementById('total').textContent = total;
+
+            if (total > balance) {
+                document.getElementById('order-result').textContent = "Недостаточно средств!";
+            } else if (item1Quantity < 0 || item2Quantity < 0 || item3Quantity < 0 || item4Quantity < 0 || item5Quantity < 0 || item6Quantity < 0 || item7Quantity < 0) {
+                document.getElementById('order-result').textContent = "Нельзя указать отрицательное количество товаров!";
+            } else if (item1Quantity === 0 && item2Quantity === 0 && item3Quantity === 0 && item4Quantity === 0 && item5Quantity === 0 && item6Quantity === 0 && item7Quantity === 0) {
+                document.getElementById('order-result').textContent = "Выберите хотя бы один товар!";
+            } else {
+                document.getElementById('order-result').textContent = "Заказ оформлен успешно!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 6
+    </header>
+
+    <main>
+        <h2>Мой баланс:</h2>
+        <input type="number" id="balance" value="1000">
+
+        <h2>Корзина товаров:</h2>
+        <table>
+            <tr>
+                <th>Наименование</th>
+                <th>Цена</th>
+                <th>Количество</th>
+            </tr>
+            <tr>
+                <td>хлеб белый</td>
+                <td>500</td>
+                <td><input type="number" id="item1-quantity" value="0"></td>
+            </tr>
+            <tr>
+                <td>хлеб черный</td>
+                <td>700</td>
+                <td><input type="number" id="item2-quantity" value="0"></td>
+            </tr>
+            <tr>
+                <td>хлеб серый</td>
+                <td>300</td>
+                <td><input type="number" id="item3-quantity" value="0"></td>
+            </tr>
+            <tr>
+                <td>молоко</td>
+                <td>250</td>
+                <td><input type="number" id="item4-quantity" value="0"></td>
+            </tr>
+            <tr>
+                <td>сметана</td>
+                <td>360</td>
+                <td><input type="number" id="item5-quantity" value="0"></td>
+            </tr>
+            <tr>
+                <td>яйца 10шт</td>
+                <td>450</td>
+                <td><input type="number" id="item6-quantity" value="0"></td>
+            </tr>
+            <tr>
+                <td>яйца 30шт</td>
+                <td>850</td>
+                <td><input type="number" id="item7-quantity" value="0"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Итого:</td>
+                <td><span id="total">0</span></td>
+            </tr>
+        </table>
+
+        <button onclick="calculateTotal()">ОК</button>
+
+        <div id="order-result"></div>
+    </main>
+
+    <footer>
+        &copy; Софья Ефимкина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
