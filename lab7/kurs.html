@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефимкина Софья Алексеевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <script>
+        function showStockData() {
+            const dates = ['2024-05-31', '2024-05-30', '2024-05-29', '2024-05-28', '2024-05-27', '2024-05-24', '2024-05-23', '2024-05-22', '2024-05-21', '2024-05-20'];
+            const prices = [420.5, 417.2, 414.8, 412.1, 409.7, 407.4, 405.3, 402.9, 400.6, 398.5];
+
+            let main = document.querySelector('main'); 
+
+            let table = document.createElement('table');
+            table.innerHTML = `
+                <tr>
+                <th>Дата</th>
+                <th>Цена</th>
+                <th>Разница</th>
+                </tr>
+            `;
+
+            for (let i = 0; i < dates.length; i++) {
+                const row = document.createElement('tr');
+                const dateCell = document.createElement('td');
+                dateCell.textContent = dates[i];
+                const priceCell = document.createElement('td');
+                priceCell.textContent = prices[i].toFixed(2); 
+                const differenceCell = document.createElement('td');
+
+                if (i === 0) {
+                differenceCell.textContent = '-'; 
+                } else {
+                differenceCell.textContent = (prices[i] - prices[i - 1]).toFixed(2);
+                }
+
+                row.appendChild(dateCell);
+                row.appendChild(priceCell);
+                row.appendChild(differenceCell);
+                table.appendChild(row);
+            }
+
+            main.appendChild(table);
+
+            const averagePrice = calculateAverage(prices);
+            const maxPrice = Math.max(...prices);
+            const minPrice = Math.min(...prices);
+
+            const infoText = document.createElement('div');
+            infoText.innerHTML = `
+                <p>Средняя цена: ${averagePrice.toFixed(2)}</p>
+                <p>Максимальная цена: ${maxPrice.toFixed(2)}</p>
+                <p>Минимальная цена: ${minPrice.toFixed(2)}</p>
+            `;
+
+            main.appendChild(infoText);
+            }
+
+            function calculateAverage(prices) {
+            let sum = 0;
+            for (const price of prices) {
+                sum += price;
+            }
+            return sum / prices.length;
+    }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 6
+    </header>
+
+    <main>
+        <button onclick="showStockData()">Курс акций Ростелеком</button>
+    </main>
+
+    <footer>
+        &copy; Софья Ефимкина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
