@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефимкина Софья Алексеевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../lab4/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+    <style>
+        .color {
+            margin: 30px;
+            border: 2px solid;
+            padding: 7px;
+        }
+    </style>
+    <script>
+        function changeColor(div) {
+          if(div.style.backgroundColor == 'yellow') {
+            div.style.backgroundColor = 'red';
+            document.getElementById('color-name').innerHTML = 'красный';
+          }  
+          else if(div.style.backgroundColor == 'red') {
+            div.style.backgroundColor = 'black';
+            div.style.color = 'white'
+            document.getElementById('color-name').innerHTML = 'черный';
+          }  
+          else if(div.style.backgroundColor == 'black') {
+            div.style.backgroundColor = 'green';
+            div.style.color = 'white'
+            document.getElementById('color-name').innerHTML = 'черный';
+          }  
+          else if(div.style.backgroundColor == 'green') {
+            div.style.backgroundColor = 'white';
+            div.style.color = 'black'
+            document.getElementById('color-name').innerHTML = 'черный';
+          }  
+          else if(div.style.backgroundColor == 'white') {
+            div.style.backgroundColor = 'purple';
+            div.style.color = 'white'
+            document.getElementById('color-name').innerHTML = 'черный';
+          }  
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 6
+    </header>
+
+    <main>
+        <div class="color" ondblclick="changeColor(this)" style="background-color: yellow;">
+            Цвет: <span id="color-name">желтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить
+        </div>
+    </main>
+
+    <footer>
+        &copy; Софья Ефимкина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
