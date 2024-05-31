@@ -24,6 +24,7 @@
 
             document.querySelector('main').appendChild(newBlock);
         }
+
         function addNewBlocks() {
             let maxBlockCount = 10;
             let randomBlockCount = Math.floor(Math.random() * maxBlockCount) + 1;
@@ -38,6 +39,32 @@
                 main.appendChild(newBlock);
             }
         }
+
+        function add20_50() {
+            let main = document.querySelector('main');
+            for(let i = 20; i<=50; i+=2.5) {
+                let newBlock = document.createElement('div');
+                let color = '';
+                    if (i % 10 === 0) {
+                    color = 'red';
+                    } else if (i % 5 === 0) {
+                    color = 'blue';
+                    } else {
+                    color = 'white';
+                    }
+                let size = '';
+                    if (i % 10 === 0) {
+                    size = 60; 
+                    }
+                newBlock.style.width = `${size}px`;
+                newBlock.style.backgroundColor = color;
+                newBlock.style.border = '1px solid';
+
+                newBlock.innerHTML = `${i}`
+
+                main.appendChild(newBlock);
+            }
+        }
     </script>
 </head>
 <body>
@@ -48,6 +75,7 @@
     <main>
         <button onclick="addNewBlock()" >добавить блок</button>
         <button onclick="addNewBlocks()">добавить блоки</button>
+        <button onclick="add20_50()">20 => 50</button>
     </main>
 
     <footer>
