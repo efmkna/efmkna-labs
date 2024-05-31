@@ -8,6 +8,41 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-32x32.png">
     <link rel="icon" href="../favicon-16x16.png">
+    <script>
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if(color == 'красный' && type == 'футболка') {
+                wear.src = 'red-f.jpg';
+            }
+            else if(color == 'белый' && type == 'футболка') {
+                wear.src = 'white-f.jpg';
+            }
+            else if(color == 'черный' && type == 'футболка') {
+                wear.src = 'black-f.jpg';
+            }
+            else if(color == 'красный' && type == 'поло') {
+                wear.src = 'red-p.jpeg';
+            }
+            else if(color == 'белый' && type == 'поло') {
+                wear.src = 'white-p.jpg';
+            }
+            else if(color == 'черный' && type == 'поло') {
+                wear.src = 'black-p.jpg';
+            }
+            else if(color == 'красный' && type == 'майка') {
+                wear.src = 'red-m.jpg';
+            }
+            else if(color == 'белый' && type == 'майка') {
+                wear.src = 'white-m.jpg';
+            }
+            else if(color == 'черный' && type == 'майка') {
+                wear.src = 'black-m.jpg';
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -24,15 +59,15 @@
             </select><br>
 
             Тип одежды:
-            <select id="wear-color">
+            <select id="wear-type">
                 <option>футболка</option>
                 <option>поло</option>
                 <option>майка</option>
             </select><br>
 
-            <button>OK</button><br>
+            <button onclick="filter()">OK</button><br>
 
-            <img id="wear">
+            <img id="wear" style="height: 300px; width: 300px;">
         </div>
     </main>
 
