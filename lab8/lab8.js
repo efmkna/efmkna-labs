@@ -52,3 +52,30 @@ function showDayOfWeek() {
         document.getElementById('day-of-week').innerHTML = `Пожалуйста, введите корректную дату.`;
     }
 }
+
+function showDaysCount() {
+    let today = new Date();
+    let inputDate = document.querySelector('input[type=date]');
+    let birthday = new Date(inputDate.value);
+    let daysCount = (today - birthday)/1000/60/60/24;
+    daysCount = Math.floor(daysCount);
+    alert(daysCount);
+}
+
+function showDaysCount() {
+    let today = new Date();
+    let inputDate = document.querySelector('input[type=date]');
+    let birthday = new Date(inputDate.value);
+    if (inputDate.value) {
+        let daysCount = (today - birthday) / 1000 / 60 / 60 / 24;
+        daysCount = Math.floor(daysCount);
+        document.getElementById('output').textContent = `Количество дней с даты рождения: ${daysCount}`;
+    } else {
+        document.getElementById('output').textContent = 'Пожалуйста, введите дату.';
+    }
+}
+
+function clearFields() {
+    document.getElementById('birthdate').value = '';
+    document.getElementById('output').textContent = '';
+}
