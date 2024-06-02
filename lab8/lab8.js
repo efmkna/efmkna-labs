@@ -79,3 +79,10 @@ function clearFields() {
     document.getElementById('birthdate').value = '';
     document.getElementById('output').textContent = '';
 }
+
+function showTime() {
+    let today = new Date();
+    let currentTime = today.toLocaleTimeString('ru-RU');
+    document.getElementById('time').innerHTML = currentTime;
+}
+setInterval(showTime, 1000);
