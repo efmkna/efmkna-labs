@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефимкина Софья Алексеевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+    <script>
+        function getWeatherForecast() {
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const times = data.hourly.time;
+                    const temperatures = data.hourly.temperature_2m;
+    
+                    const today = new Date().toISOString().split('T')[0];
+    
+                    const getTimeIndex = (hour) => {
+                        return times.findIndex(time => time === `${today}T${hour}:00`);
+                    };
+    
+                    const temp8am = temperatures[getTimeIndex('08')];
+                    const temp12pm = temperatures[getTimeIndex('12')];
+                    const temp8pm = temperatures[getTimeIndex('20')];
+    
+                    document.getElementById('date').textContent = `Дата: ${today}`;
+                    document.getElementById('temperature8am').textContent = `Температура в 8:00: ${temp8am} °C`;
+                    document.getElementById('temperature12pm').textContent = `Температура в 12:00: ${temp12pm} °C`;
+                    document.getElementById('temperature8pm').textContent = `Температура в 20:00: ${temp8pm} °C`;
+                })
+                .catch(error => {
+                    console.error('Ошибка получения данных:', error);
+                });
+        }
+    </script>
+    <style>
+        .weather-report {
+            border: 2px solid #2196F3;
+            border-radius: 10px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 400px;
+        }
+        .weather-report h2 {
+            color: #2196F3;
+        }
+        .weather-report p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 6
+    </header>
+
+    <main>
+        <div class="weather-report" id="weatherReportContainer">
+            <h1>Прогноз погоды Новосибирск</h1>
+            <p id="date"></p>
+            <p id="temperature8am"></p>
+            <p id="temperature12pm"></p>
+            <p id="temperature8pm"></p>
+            <button onclick="getWeatherForecast()">Получить прогноз</button>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Софья Ефимкина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
