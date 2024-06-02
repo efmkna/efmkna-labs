@@ -10,7 +10,7 @@
     <link rel="icon" href="../lab4/favicon-16x16.png">
     <script src="lab8.js"></script>
 </head>
-<body onload="showDate(), showLocaleDates(), showDateComponents()">
+<body onload="showDate(), showLocaleDates(), showDateComponents(), showDayOfWeek()">
     <header>
         НГТУ, ФБ, Лабораторная работа 8 
     </header>
@@ -24,6 +24,13 @@
             <div id="day"></div>
         </div>
         <div id="locales-dates"></div>
+        <div id="input-fields">
+            <input type="number" id="input-day" placeholder="День" min="1" max="31">
+            <input type="number" id="input-month" placeholder="Месяц" min="1" max="12">
+            <input type="number" id="input-year" placeholder="Год" min="1">
+            <button onclick="showDayOfWeek()">День недели</button>
+            <div id="day-of-week"></div>
+        </div>
     </main>
 
     <footer>
