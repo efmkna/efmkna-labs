@@ -38,3 +38,17 @@ function showLocaleDates() {
 
     localesDates.innerHTML = output;
 }
+
+function showDayOfWeek() {
+    let day = document.getElementById('input-day').value;
+    let month = document.getElementById('input-month').value - 1; // Months are 0-based
+    let year = document.getElementById('input-year').value;
+
+    if (day && month >= 0 && year) {
+        let date = new Date(year, month, day);
+        let dayOfWeek = date.toLocaleString('ru-RU', { weekday: 'long' });
+        document.getElementById('day-of-week').innerHTML = `День недели: ${dayOfWeek}`;
+    } else {
+        document.getElementById('day-of-week').innerHTML = `Пожалуйста, введите корректную дату.`;
+    }
+}
