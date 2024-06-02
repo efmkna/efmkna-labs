@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефимкина Софья Алексеевна. Лабораторные работы по WEB-программированию</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../lab4/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+    <script src="lab8.js"></script>
+    <style>
+        .form-group {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: brown;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .output {
+            margin-top: 10px;
+            padding: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8 
+    </header>
+
+    <main>
+        <div class="form-group">
+            <label>Дата рождения: <input type="date" id="birthdate"></label>
+        </div>
+        <div class="form-group">
+            <button onclick="showDaysCount()">Показать число дней</button>
+            <button onclick="clearFields()">Очистить</button>
+        </div>
+        <div id="output" class="output"></div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Ефимкина Софья, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
