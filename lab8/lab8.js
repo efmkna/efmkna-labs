@@ -85,4 +85,15 @@ function showTime() {
     let currentTime = today.toLocaleTimeString('ru-RU');
     document.getElementById('time').innerHTML = currentTime;
 }
-setInterval(showTime, 1000);
+
+function updateClock() {
+    const secondHand = document.getElementById('second-hand');
+    const now = new Date();
+    const seconds = now.getSeconds();
+    const secondsDegrees = seconds * 6;
+    secondHand.style.transform = `translate(-50%, -100%) rotate(${secondsDegrees}deg)`;
+  }
+
+  setInterval(showTime, 1000);
+  setInterval(updateClock, 1000);
+  
