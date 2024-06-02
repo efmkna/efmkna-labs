@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефимкина Софья Алексеевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../lab4/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+    <script>
+        function getEuroExchangeRate(){
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js'
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json){
+                    const date = new Date(json.Date).toLocaleDateString();
+                    const previousDate = new Date(json.PreviousDate).toLocaleDateString();
+                    const currentRate = json.Valute.EUR.Value.toFixed(2);
+                    const previousRate = json.Valute.EUR.Previous.toFixed(2);
+                    const difference = (currentRate - previousRate).toFixed(2);
+                    const differenceText = difference > 0 
+                        ? `<span class="difference-up">поднялся на ${difference}</span>`
+                        : `<span class="difference-down">опустился на ${difference}</span>`;
+                    
+                    document.getElementById('date').textContent = `Дата запроса: ${date}`;
+                    document.getElementById('currentRate').textContent = `Текущий курс: €${currentRate}`;
+                    document.getElementById('previousRate').textContent = `Курс за предыдущую дату: €${previousRate}`;
+                    document.getElementById('difference').innerHTML = `Курс ${differenceText}`;
+                });
+        }
+    </script>
+    <style>
+        .exchange-rate {
+            border: 2px solid darkred;
+            border-radius: 10px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 300px;
+        }
+        .exchange-rate h1 {
+            color: darkred;
+        }
+        .exchange-rate p {
+            margin: 10px 0;
+        }
+        .difference-up {
+            color: green;
+        }
+        .difference-down {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 7
+    </header>
+
+    <main>
+        <div class="exchange-rate" id="exchangeRateContainer">
+            <h1>Курс Евро</h1>
+            <p id="date"></p>
+            <p id="currentRate"></p>
+            <p id="previousRate"></p>
+            <p id="difference"></p>
+            <p class="source-link"><a href="https://www.cbr-xml-daily.ru/">Источник данных</a></p>
+        </div>
+        <button onclick="getEuroExchangeRate()">узнать курс евро</button>
+    </main>
+
+    <footer>
+        &copy; Софья Ефимкина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
