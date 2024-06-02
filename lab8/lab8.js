@@ -4,6 +4,20 @@ function showDate() {
     out.innerHTML = today.toLocaleDateString('ru-RU');
 }
 
+function showDateComponents() {
+    let today = new Date();
+
+    let year = today.getFullYear();
+    let month = today.toLocaleString('ru-RU', { month: 'long' });
+    let date = today.getDate();
+    let day = today.toLocaleString('ru-RU', { weekday: 'long' });
+
+    document.getElementById('year').innerHTML = `Текущий год: ${year}`;
+    document.getElementById('month').innerHTML = `Текущий месяц: ${month}`;
+    document.getElementById('date').innerHTML = `Текущая дата: ${date}`;
+    document.getElementById('day').innerHTML = `День недели: ${day}`;
+}
+
 function showLocaleDates() {
     let localesDates = document.getElementById('locales-dates');
     let today = new Date();
